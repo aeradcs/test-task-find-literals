@@ -1,20 +1,20 @@
 import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws FileNotFoundException {
         Finder finder = new Finder();
         File in = new File(args[0]);
         Scanner scanner = new Scanner(in);
         String inputLine;
 
-        for(int i = 0; scanner.hasNextLine(); i++) {
+        for (int lineNumber = 0; scanner.hasNextLine(); lineNumber++) {
             inputLine = scanner.nextLine();
 
-            finder.findLiteralsInString(inputLine, i, "'");
-            finder.findLiteralsInString(inputLine, i, "\"");
+            finder.findLiteralsInString(inputLine, lineNumber, "'");
+            finder.findLiteralsInString(inputLine, lineNumber, "\"");
         }
         finder.printHashMap();
 
