@@ -16,10 +16,7 @@ public class Main {
             finder.findLiteralsInString(inputLine, lineNumber, "'");
             finder.findLiteralsInString(inputLine, lineNumber, "\"");
         }
-        //finder.f();
         finder.printHashMap();
-
-
 
         scanner.close();
     }

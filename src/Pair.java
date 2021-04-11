@@ -4,33 +4,32 @@ import java.util.Set;
 
 public class Pair {
     private Set<Integer> lineNumbers;
-    private Integer amount;
+    private Integer literalOccurrencesAmount;
 
     public Pair() {
         lineNumbers = new LinkedHashSet<>();
-        amount = 0;
+        literalOccurrencesAmount = 0;
     }
 
     public void put(Integer value) {
         lineNumbers.add(value);
-        amount++;
+        literalOccurrencesAmount++;
     }
 
-    public Integer getLineNumber(int i) {
+    public Integer getLineNumber(int index) {
         Iterator<Integer> iter = lineNumbers.iterator();
         Integer current = null;
-        for (int k = 0; iter.hasNext(); k++) {
+        for (int i = 0; iter.hasNext(); i++) {
             current = iter.next();
-            if (k == i) {
+            if (i == index) {
                 break;
             }
         }
         return current;
-
     }
 
-    public Integer getAmount() {
-        return amount;
+    public Integer getLiteralOccurrencesAmount() {
+        return literalOccurrencesAmount;
     }
 
     public int getSetSize() {
