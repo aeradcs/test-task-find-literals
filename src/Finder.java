@@ -6,9 +6,9 @@ public class Finder {
     public void findLiteralsInString(String inputLine, int lineNumber, String quote) {
         String literal;
         for (int leftQuoteIndex = 0, rightQuoteIndex = 0;
-             (leftQuoteIndex = inputLine.indexOf(quote, rightQuoteIndex)) != -1; rightQuoteIndex++) {
-            rightQuoteIndex = inputLine.indexOf(quote, leftQuoteIndex + 1);
+             (leftQuoteIndex = inputLine.indexOf(quote, rightQuoteIndex)) != -1; rightQuoteIndex++) {//read while there is quote in the line
 
+            rightQuoteIndex = inputLine.indexOf(quote, leftQuoteIndex + 1);
             literal = inputLine.substring(leftQuoteIndex + 1, rightQuoteIndex);
 
             putLiteralLineNumberInHashMap(literal, lineNumber);
@@ -24,10 +24,13 @@ public class Finder {
 
     public void printHashMap() {
         literalsLineNumbersAmounts.forEach((literal, pair) -> {
+
             if (pair.getLiteralOccurrencesAmount() > 1) {
                 System.out.print("Lines with '" + literal + "': ");
+
                 for (int i = 0; i < pair.getSetSize(); i++) {
                     System.out.print(pair.getLineNumber(i));
+
                     if (i < pair.getSetSize() - 1) {
                         System.out.print(", ");
                     } else {
