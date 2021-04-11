@@ -1,6 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -16,7 +16,10 @@ public class Main {
             finder.findLiteralsInString(inputLine, lineNumber, "'");
             finder.findLiteralsInString(inputLine, lineNumber, "\"");
         }
+        //finder.f();
         finder.printHashMap();
+
+
 
         scanner.close();
     }
