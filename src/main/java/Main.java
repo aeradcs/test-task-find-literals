@@ -13,8 +13,7 @@ public class Main {
         for (int lineNumber = 0; scanner.hasNextLine(); lineNumber++) {
             inputLine = scanner.nextLine();
 
-            finder.findLiteralsInString(inputLine, lineNumber, "'");
-            finder.findLiteralsInString(inputLine, lineNumber, "\"");
+            finder.findLiteralsInString(inputLine, lineNumber);
         }
         finder.printHashMap();
 
